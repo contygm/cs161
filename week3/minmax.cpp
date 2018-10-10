@@ -7,22 +7,49 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 using std::endl;
 using std::cout;
 using std::cin;
 
+
 int main()
 {
+    std::ifstream inputFile;
+    std::string fileName;
+
     // ask user for name of input file
     cout << "Please enter your filename." << endl;
+    cin >> fileName;    
 
-    // open input file
+    // attempt to open input file
+    inputFile.open(fileName);
 
-    // add integers in input file
+    // if file exists
+    if (inputFile)
+    {
+        int sum;
+        int number;
 
-    // create output file sum.txt
+        // add integers in input file
+        while (inputFile >> number) 
+        {
+            sum += number;
+        }
 
-    // write sum to output file
+        // close input file
+        inputFile.close();
 
-    // print success notification to user
+        // create output file sum.txt
+
+        // write sum to output file
+
+        // print success notification to user
+        cout << "result written to sum.txt" << endl;
+    } 
+    // print error if file does not exist
+    else {
+        cout << "could not access file" << endl;
+    }
+
 }
