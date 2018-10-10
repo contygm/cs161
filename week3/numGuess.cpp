@@ -12,5 +12,18 @@ using std::cin;
 
 int main()
 {
+    bool correct = false;
+    // ask for secret number
+    cout << "Enter the number for the player to guess." << endl;
+
+    // Ask for guesses until user is ga
+    while (!correct)
+    {
+
+    }
+
+        // display if number is too high or low
+
+    // print number of guesses
 
 }
