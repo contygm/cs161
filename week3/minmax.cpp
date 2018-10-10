@@ -17,6 +17,7 @@ int main()
 {
     std::ifstream inputFile;
     std::string fileName;
+    std::ofstream outputFile;
 
     // ask user for name of input file
     cout << "Please enter your filename." << endl;
@@ -40,9 +41,10 @@ int main()
         // close input file
         inputFile.close();
 
-        // create output file sum.txt
-
-        // write sum to output file
+        // create output file and store sum in it
+        outputFile.open("sum.txt");
+        outputFile << sum << endl;
+        outputFile.close();
 
         // print success notification to user
         cout << "result written to sum.txt" << endl;
@@ -52,4 +54,5 @@ int main()
         cout << "could not access file" << endl;
     }
 
+    return 0;
 }

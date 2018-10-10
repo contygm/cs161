@@ -60,4 +60,5 @@ int main()
     cout << "min: " << min << endl;
     cout << "max: " << max << endl;
 
+    return 0;
 }

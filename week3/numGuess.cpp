@@ -47,5 +47,5 @@ int main()
 
     // print number of guesses
     cout << "You guessed it in " << guesses <<" tries." << endl;
-
+    return 0;
 }
