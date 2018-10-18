@@ -28,5 +28,4 @@ void smallSort(int &num1, int &num2, int &num3)
         else if (num3 < num1)
             swap(num3, num1);
     }
-     
 }

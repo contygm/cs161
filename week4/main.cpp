@@ -19,10 +19,10 @@ int main()
     smallSort(num1, num2, num3);
     cout << num1 << ", " << num2 << ", " << num3 << endl;
 
-    // int duhHail;
-    // cout << "Gimme your hailstone number: " << endl;
-    // cin >> hailStone;
-    // cout << hailStone(duhHail) << endl;
+    int duhHail;
+    cout << "Gimme a positive int: " << endl;
+    cin >> duhHail;
+    cout << hailstone(duhHail) << endl;
 
     return 0;
 }
