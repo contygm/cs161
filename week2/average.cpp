@@ -12,35 +12,35 @@ using std::cin;
 
 int main() 
 {
-    double total;
-    double inputNumber;
+    double sum;
+    double input;
     double average;
 
     // ask user for input
     cout << "Please enter five numbers." << endl;
 
-    // recieve 1st number and add to total
-    cin >> inputNumber;
-    total += inputNumber;
+    // recieve 1st number and add to sum
+    cin >> input;
+    sum += input;
     
-    // recieve 2nd number and add to total
-    cin >> inputNumber;
-    total += inputNumber;
+    // recieve 2nd number and add to sum
+    cin >> input;
+    sum += input;
     
-    // recieve 3rd number and add to total
-    cin >> inputNumber;
-    total += inputNumber;
+    // recieve 3rd number and add to sum
+    cin >> input;
+    sum += input;
     
-    // recieve 4th number and add to total
-    cin >> inputNumber;
-    total += inputNumber;
+    // recieve 4th number and add to sum
+    cin >> input;
+    sum += input;
     
-    // recieve 5th number and add to total
-    cin >> inputNumber;
-    total += inputNumber;
+    // recieve 5th number and add to sum
+    cin >> input;
+    sum += input;
 
     // calculate average
-    average = total/5;
+    average = sum/5;
 
     // display average to user
     cout << "The average of those numbers is:" << endl;

@@ -11,8 +11,9 @@
 class Taxicab
 {
 private:
-    int xVal;
-    int yVal;
+    int xCoord;
+    int yCoord;
+    int distanceTraveled;
 
 public:
     // default constructor
@@ -22,17 +23,19 @@ public:
     Taxicab(int x, int y);
 
     // getters
-    void getXCoord();
-    void getYCoord();
-    void getDistanceTraveled();
+    int getXCoord();
+    int getYCoord();
+    int getDistanceTraveled();
 
     /********************************************************************* 
     ** Description: calculate x-axis distance
     *********************************************************************/
-    int moveX();
+    void moveX(int x);
 
     /********************************************************************* 
     ** Description: calculate y-axis distance
     *********************************************************************/
-    int moveY()
-}
+    void moveY(int y);
+};
+
+#endif
