@@ -20,9 +20,6 @@ private:
 
 public:
 
-    // default constructor
-    Team();
-
     // constructor
     Team(Player p1, Player p2, Player p3, Player p4, Player p5);
 

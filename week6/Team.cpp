@@ -68,9 +68,8 @@ void Team::setCenter(Player p)
     center = p;
 }
 
-
 /********************************************************************* 
-** Description: calculate total points
+** Description: calculate total points for the team
 *********************************************************************/
 int Team::totalPoints()
 {
