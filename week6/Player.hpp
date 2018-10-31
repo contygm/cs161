@@ -17,7 +17,7 @@ private:
     string name;
     int points;
     int rebounds;
-    int assits;
+    int assists;
 
 public: 
     // default constructor
@@ -33,14 +33,14 @@ public:
     int getAssists();
 
     // setters
-    void setPoints();
-    void setRebounds();
-    void setAssists();
+    void setPoints(int p);
+    void setRebounds(int r);
+    void setAssists(int a);
 
     /********************************************************************* 
     ** Description: calculate if p1 has more points than p2
     *********************************************************************/
-    bool hasMorePointsThan();
+    bool hasMorePointsThan(Player otherPlayer);
 
 };
 

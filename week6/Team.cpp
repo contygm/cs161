@@ -9,24 +9,61 @@
 #include "Player.hpp"
 
  // default constructor
-Team();
+// Team::Team()
+// {
+
+// }
 
 // constructor
-Team(Player p1, Player p2, Player p3, Player p4, Player p5);
+Team::Team(Player p1, Player p2, Player p3, Player p4, Player p5)
+{
+
+}
 
 // getters
-Player getPointGuard();
-Player getShootingGuard();
-Player getSmallForward();
-Player getPowerForward();
-Player getCenter();
+Player Team::getPointGuard()
+{
+    
+}
+
+Player Team::getShootingGuard()
+{
+
+}
+
+Player Team::getSmallForward()
+{
+
+}
+Player Team::getPowerForward()
+{
+
+}
+Player Team::getCenter()
+{
+
+}
 
 // setters
-void setPointGuard(Player p);
-void setShootingGuard(Player p);
-void setSmallForward(Player p);
-void setPowerForward(Player p);
-void setCenter(Player p);
+void setPointGuard(Player p)
+{
+
+}
+void setShootingGuard(Player p)
+{
+
+}
+void setSmallForward(Player p)
+{
+
+}
+void setPowerForward(Player p)
+{
+
+}
+void setCenter(Player p){
+
+}
 
 
 /********************************************************************* 
