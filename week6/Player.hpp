@@ -33,9 +33,9 @@ public:
     int getAssists();
 
     // setters
-    void setPoints(int p);
-    void setRebounds(int r);
-    void setAssists(int a);
+    void setPoints(int);
+    void setRebounds(int);
+    void setAssists(int);
 
     /********************************************************************* 
     ** Description: calculate if p1 has more points than p2

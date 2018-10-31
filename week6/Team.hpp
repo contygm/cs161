@@ -11,15 +11,14 @@
 
 class Team
 {
-public:
+private:
     Player pointGuard;
     Player shootingGuard;
     Player smallForward;
     Player powerForward;
     Player center;
-    int sumPoints;
 
-private:
+public:
 
     // default constructor
     Team();

@@ -8,65 +8,71 @@
 #include "Team.hpp"
 #include "Player.hpp"
 
- // default constructor
-// Team::Team()
-// {
-
-// }
-
 // constructor
 Team::Team(Player p1, Player p2, Player p3, Player p4, Player p5)
 {
-
+    pointGuard = p1;
+    shootingGuard = p2;
+    smallForward = p3;
+    powerForward = p4;
+    center = p5;
 }
 
 // getters
 Player Team::getPointGuard()
 {
-    
+    return pointGuard;
 }
 
 Player Team::getShootingGuard()
 {
-
+    return shootingGuard;
 }
 
 Player Team::getSmallForward()
 {
-
+    return smallForward;
 }
 Player Team::getPowerForward()
 {
-
+    return powerForward;
 }
 Player Team::getCenter()
 {
-
+    return center;
 }
 
 // setters
-void setPointGuard(Player p)
-{
-
+void Team::setPointGuard(Player p)
+{   
+    pointGuard = p;
 }
-void setShootingGuard(Player p)
+
+void Team::setShootingGuard(Player p)
 {
-
+    shootingGuard = p;
 }
-void setSmallForward(Player p)
+
+void Team::setSmallForward(Player p)
 {
-
+    smallForward = p;
 }
-void setPowerForward(Player p)
+
+void Team::setPowerForward(Player p)
 {
-
+    powerForward = p;
 }
-void setCenter(Player p){
 
+void Team::setCenter(Player p)
+{
+    center = p;
 }
 
 
 /********************************************************************* 
 ** Description: calculate total points
 *********************************************************************/
-int totalPoints();
+int Team::totalPoints()
+{
+    return pointGuard.getPoints() + shootingGuard.getPoints() + smallForward.getPoints() + powerForward.getPoints() + center.getPoints();
+}

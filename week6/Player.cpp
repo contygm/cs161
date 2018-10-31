@@ -69,8 +69,5 @@ void Player::setAssists(int a)
 *********************************************************************/
 bool Player::hasMorePointsThan(Player otherPlayer)
 {
-    if (points > otherPlayer.getPoints()) 
-        return true;
-    else 
-        return false;
+    return points > otherPlayer.getPoints();
 }
