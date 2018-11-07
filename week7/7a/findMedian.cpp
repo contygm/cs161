@@ -1,36 +1,33 @@
 
+/********************************************************************* 
+** Author: Genevieve Conty
+** Date: 11/7/2018
+** Description: Function for finding median of int array. Takes 
+** array (int) and length (int) of array params respectively. 
+*********************************************************************/ 
+
 #include <algorithm>
 using std::sort;
 
-int findMedian (int array, int length)
+int findMedian (int intArray[], int length)
 {
     // initialize needed variables
     int halfLength = length / 2;
     int median = 0;
-    
-    // initialize array with two parameters
-    int intArray[length] = array;
 
     // sort array
-    sort(intArray, length)
-    
-    // check sort total
-    for (int i = 0, i < 5, i++) 
-    {
-        cout << intArray[i] << endl;
-    }
+    sort(intArray, intArray+length);
 
-
-    // even
-    if (length % 2) 
+    // even array length
+    if (length % 2 == 0) 
     {
-        
+        median = (intArray[halfLength - 1] + intArray[halfLength]) / 2;
     } 
-    // odd
+    // odd array length
     else 
     {
-        median = intArray[halfLength + 1];
+        median = intArray[halfLength];
     }
-
+    
     return median;
 }
