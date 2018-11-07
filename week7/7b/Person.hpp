@@ -19,11 +19,11 @@ private:
 public:
 
     // constuctor: initializes name and age
-    Person(string name, int age);
+    Person(string name, double age);
     
     // getters
     string getName();
-    int getAge();
+    double getAge();
 
 };
 

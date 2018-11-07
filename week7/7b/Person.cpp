@@ -10,7 +10,7 @@
 using std::string;
 
 // constuctor: initializes name and age
-Person::Person(string n, int a)
+Person::Person(string n, double a)
 {
     name = n;
     age = a;
@@ -22,7 +22,7 @@ string Person::getName()
     return name;
 }
 
-int Person::getAge()
+double Person::getAge()
 {
     return age;
 }
