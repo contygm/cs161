@@ -7,6 +7,8 @@
 
 #ifndef PERSON_HPP
 #define PERSON_HPP
+#include <string>
+using std::string;
 
 class Person
 {
@@ -16,8 +18,13 @@ private:
 
 public:
 
-    // constuctor: takes two vals and initializes
-    // get name
-    // get age
+    // constuctor: initializes name and age
+    Person(string name, int age);
+    
+    // getters
+    string getName();
+    int getAge();
 
-}
+};
+
+#endif
