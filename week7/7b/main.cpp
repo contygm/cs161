@@ -11,7 +11,7 @@ int main()
     Person jay("Jay", 29.75);
     Person steve("Steve", 33);
     Person elder("Elder", 109);
-    Person child("child", -1);
+    Person child("child", 7);
     Person baby("Baby", 0.5);
 
     // check initialization and getters work
