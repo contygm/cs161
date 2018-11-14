@@ -10,13 +10,24 @@ using std::cout;
 
 void transformArray(int* array, int size)
 {
-    int* transformedArray = new int[size*2];
+    // dynamically allocate an array that is twice as long, 
+    // int transformedArray = new int[size*2];
 
-    for (int i=0; i < (size); i++)
-        transformArray[i] = array[i];
+    // fill with the values from the original array 
+    // then after, fill remaining space with each of those values plus one
+    // for (int i=0; i < (size); i++)
+    // {
+    //     transformArray[i] = array[i];
+    //     transformArray[size+i] = array[i]+1
+    // }
+        
+    // for (int i=size; i < (size*2); i++)
+    //     cout << transformArray[i] << endl;
+    
+    for (int i=size; i < (size); i++)
+        cout << *array[i] << endl;
+    
+    // array = transformedArray;
 
-    for (int i=0; i < (size); i++)
-        cout << transformArray[i] << endl;
-
-    delete []transformedArray;
+    // delete []transformedArray;
 }
