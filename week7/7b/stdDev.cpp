@@ -8,7 +8,7 @@
 
 /*
 *   Standard Deviation Formula:
-*   sqrt( sum( (X_i - µ)^2 ) / N)
+*   sqrt( sum( (X_i - µ)^2 ) / N )
 *
 *   X_i = single input
 *   µ = avg of all inputs

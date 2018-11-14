@@ -1,6 +1,7 @@
 #include <iostream>
 #include "findMedian.cpp"
 using std::cout;
+using std::endl;
 
 int main() {
 
