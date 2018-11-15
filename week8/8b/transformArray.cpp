@@ -8,7 +8,7 @@
 using std::endl;
 using std::cout;
 
-void transformArray(int *& array, int size)
+void transformArray(int* &array, int size)
 {
     // dynamically allocate array that is twice as long
     int* newArray = new int[size*2];
@@ -28,10 +28,11 @@ void transformArray(int *& array, int size)
         cout << "YO: " << newArray[i] << endl;
     }
     
-    delete []array;
+    delete[] array;
+    
     // update original array
     array = newArray;
 
     // clear memory
-    delete []newArray;
+    newArray = NULL;
 }
