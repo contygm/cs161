@@ -12,8 +12,8 @@ int main()
 
     transformArray(myArray, 3);
 
-    for (int i=0; i<3; i++)
-        cout << "HI" << myArray[i] << endl;
+    for (int i=0; i<6; i++)
+        cout << "HI: " << myArray[i] << endl;
 
     delete []myArray;
 
