@@ -15,7 +15,9 @@ using std::endl;
 // default constructor
 GBoard::GBoard()
 {
-    gameState stateOfGame = UNFINISHED;
+    progress = UNFINISHED;
+	cout << "progress: " << progress << endl;;
+
 
     // REVIEW: try range-based loop or get ride of double for loop
     for(int row = 0; row < 15; row++)
@@ -38,6 +40,8 @@ gameState GBoard::getGameState()
 *********************************************************************/
 bool GBoard::makeMove(int row, int col, char move)
 {
+	cout << "move: " << move << endl;;
+
 	if(board[row][col] != '-' || progress != UNFINISHED)
 		return false;
 	
@@ -70,7 +74,7 @@ bool GBoard::draw()
 	return false;
 }
 
-// REMOVE: 	PRINT Board
+// REMOVE: PRINT Board
 void GBoard::printBoard()
 {
 	for(int row = 0; row < 15; row++)
