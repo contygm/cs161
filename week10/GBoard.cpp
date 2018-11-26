@@ -15,8 +15,8 @@ using std::endl;
 // default constructor
 GBoard::GBoard()
 {
-    progress = UNFINISHED;
-	cout << "progress: " << progress << endl;;
+    state = UNFINISHED;
+	cout << "state: " << state << endl;;
 
 
     // REVIEW: try range-based loop or get ride of double for loop
@@ -32,7 +32,7 @@ GBoard::GBoard()
 // getters
 gameState GBoard::getGameState()
 {
-	return progress;
+	return state;
 }
 
 /********************************************************************* 
@@ -40,17 +40,21 @@ gameState GBoard::getGameState()
 *********************************************************************/
 bool GBoard::makeMove(int row, int col, char move)
 {
-	cout << "move: " << move << endl;;
-
-	if(board[row][col] != '-' || progress != UNFINISHED)
+	if(board[row][col] != '-' || state != UNFINISHED)
 		return false;
 	
+	// update board
 	board[row][col] = move;
+	moveCount++;
 
 	// Check if win
-	// check if draw
-	// set progress
-
+	
+	// Check if draw
+	if (moveCount == 225)
+	{
+		state = DRAW;
+	}
+	
 	return true;
 }
 
@@ -62,15 +66,6 @@ bool GBoard::win()
 	// TODO: check horizontal
 	// TODO: check diagonal
 	// TODO: check vertical
-	return false;
-}
-
-/********************************************************************* 
-** Description: TODO: 
-*********************************************************************/
-bool GBoard::draw()
-{
-	// TODO: check if draw
 	return false;
 }
 

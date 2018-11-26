@@ -14,7 +14,8 @@ class GBoard
 {
 private:
 	char board[15][15];
-	gameState progress;
+	gameState state;
+    int moveCount;
     bool win();
     bool draw();
 
