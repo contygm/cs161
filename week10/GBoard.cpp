@@ -16,8 +16,6 @@ using std::endl;
 GBoard::GBoard()
 {
     state = UNFINISHED;
-	cout << "state: " << state << endl;;
-
 
     // REVIEW: try range-based loop or get ride of double for loop
     for(int row = 0; row < 15; row++)

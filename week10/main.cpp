@@ -11,65 +11,85 @@ int main()
 
     GBoard myBoard;
     char move;
-    gameState state;
+    bool correctState;
 
-    cout << "TEST 1: basic x and o" << endl;
+    //NOTE: TEST: basic x and o
     myBoard.makeMove(0, 0,'x');
     myBoard.makeMove(0, 1, 'o');
-    state = myBoard.getGameState();
-    cout << state << " :state of 3" << endl;
+    // myBoard.printBoard();
 
-    myBoard.printBoard();
+    correctState = (myBoard.getGameState() == UNFINISHED);
+    cout << correctState << " : game is unfinished" << endl;
 
+    // NOTE: TEST: doesn't overwrite
+    // myBoard.makeMove(0, 1, 'x');
 
-    cout << "TEST 2: Draw" << endl;
+    //NOTE: Test: Draw
+    for(int row = 0; row < 15; row++)
+	{
+		for(int col = 0; col < 15; col++)
+		{
+            if (row % 2 == 0 && col % 2 == 0)
+			    myBoard.makeMove(row, col,'x');
+            else if (row % 2 != 0 && col % 2 != 0)
+                myBoard.makeMove(row, col,'x');
+            else 
+                myBoard.makeMove(row, col,'o');
+		}
+	}
     
-    // fill entire board, aleternating x and o
-    for(int row = 0; row < 15; row++)
+    //myBoard.printBoard();
+    correctState = (myBoard.getGameState() == DRAW);
+    cout << correctState << " : game is DRAW" << endl;
+
+    // NOTE: TEST: left diagonal and X_WON
+    
+    GBoard leftDiag;
+        for(int row = 0; row < 15; row++)
 	{
-		for(int col = 0; col < 15; col++)
-		{
-            if (row % 2 == 0 && col % 2 == 0)
-			    myBoard.makeMove(row, col,'x');
-            else if (row % 2 != 0 && col % 2 != 0)
-                myBoard.makeMove(row, col,'x');
-            else 
-                myBoard.makeMove(row, col,'o');
-		}
+        leftDiag.makeMove(row, row,'x');
 	}
+    // leftDiag.printBoard();
 
-    state = myBoard.getGameState();
-    cout << state << " :state of 2" << endl;
-    myBoard.printBoard();
+    correctState = (leftDiag.getGameState() == X_WON);
+    cout << correctState << " : diagnol and X_WON" << endl;
 
-    cout << "TEST 3: left diagonal and X_WON" << endl;
-
-    for(int row = 0; row < 15; row++)
+    // NOTE: TEST: right diagonal and O_WON
+    
+    GBoard rightDiag;
+    for(int row = 14; row > -1; row--)
 	{
-		for(int col = 0; col < 15; col++)
-		{
-            if (row % 2 == 0 && col % 2 == 0)
-			    myBoard.makeMove(row, col,'x');
-            else if (row % 2 != 0 && col % 2 != 0)
-                myBoard.makeMove(row, col,'x');
-            else 
-                myBoard.makeMove(row, col,'o');
-		}
+        int col = (14 - row);
+        rightDiag.makeMove(row, col,'o');
 	}
+    // rightDiag.printBoard();
 
-    state = myBoard.getGameState();
-    cout << state << " :state of 0" << endl;
-    myBoard.printBoard();
+    correctState = (rightDiag.getGameState() == O_WON);
+    cout << correctState << " : diagnol and O_WON" << endl;
 
-    cout << "TEST 4: right diagonal and O_WON" << endl;
+    // NOTE: TEST: horizontal win
+    GBoard horizontal;
 
-    state = myBoard.getGameState();
-    cout << state << " :state of 1" << endl;
-    myBoard.printBoard();
+    for(int col = 0; col > 15; col--)
+	{
+        horizontal.makeMove(3, col,'o');
+	}
+    horizontal.printBoard();
 
-    // cout << "TEST 4: horizontal" << endl;
+    correctState = (horizontal.getGameState() == O_WON);
+    cout << correctState << " : horizontal win" << endl;
 
-    // cout << "TEST 5: vertical" << endl;
+    // NOTE: TEST: vertical win
+    GBoard vertical;
+
+    for(int row = 0; row > 15; row--)
+	{
+        vertical.makeMove(row, 5,'X');
+	}
+    vertical.printBoard();
+
+    correctState = (vertical.getGameState() == X_WON);
+    cout << correctState << " : vertical win" << endl;
 
     return 0;
 };
