@@ -37,8 +37,8 @@ int main()
                 myBoard.makeMove(row, col,'o');
 		}
 	}
-    
-    //myBoard.printBoard();
+    // myBoard.printBoard();
+
     correctState = (myBoard.getGameState() == DRAW);
     cout << correctState << " : game is DRAW" << endl;
 
@@ -70,11 +70,11 @@ int main()
     // NOTE: TEST: horizontal win
     GBoard horizontal;
 
-    for(int col = 0; col > 15; col--)
+    for(int col = 0; col < 15; col++)
 	{
         horizontal.makeMove(3, col,'o');
 	}
-    horizontal.printBoard();
+    // horizontal.printBoard();
 
     correctState = (horizontal.getGameState() == O_WON);
     cout << correctState << " : horizontal win" << endl;
@@ -82,11 +82,11 @@ int main()
     // NOTE: TEST: vertical win
     GBoard vertical;
 
-    for(int row = 0; row > 15; row--)
+    for(int row = 0; row < 15; row++)
 	{
-        vertical.makeMove(row, 5,'X');
+        vertical.makeMove(row, 5,'x');
 	}
-    vertical.printBoard();
+    // vertical.printBoard();
 
     correctState = (vertical.getGameState() == X_WON);
     cout << correctState << " : vertical win" << endl;
