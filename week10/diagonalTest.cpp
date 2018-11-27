@@ -24,35 +24,35 @@ void diagonalTest()
     correctState = (board0.getGameState() == X_WON);
     cout << correctState << " : left diagonal top corner win" << endl;
 
-    // for(int row = 5; row < 10; row++)
-	// {
-    //     board2.makeMove((row + 3), row,'x');
-	// }
-    // // board2.printBoard();
+    for(int row = 5; row < 10; row++)
+	{
+        board2.makeMove((row + 3), row,'x');
+	}
+    // board2.printBoard();
 
-    // correctState = (board2.getGameState() == X_WON);
-    // cout << correctState << " : left diagonal middle win" << endl;
+    correctState = (board2.getGameState() == X_WON);
+    cout << correctState << " : left diagonal middle win" << endl;
     
-    // // NOTE: RIGHT
-    // for(int col = 14; col > 9; col--)
-	// {
-    //     int row = (14 - col);
-    //     board1.makeMove(row, col,'o');
-	// }
-    // // board1.printBoard();
+    // NOTE: RIGHT
+    for(int col = 14; col > 9; col--)
+	{
+        int row = (14 - col);
+        board1.makeMove(row, col,'o');
+	}
+    // board1.printBoard();
 
-    // correctState = (board1.getGameState() == O_WON);
-    // cout << correctState << " : right diagonal top corner win" << endl;
+    correctState = (board1.getGameState() == O_WON);
+    cout << correctState << " : right diagonal top corner win" << endl;
 
-    // for(int col = 7; col > 2; col--)
-	// {
-    //     int row = (13 - col);
-    //     board3.makeMove(row, col,'o');
-	// }
-    // // board3.printBoard();
+    for(int col = 7; col > 2; col--)
+	{
+        int row = (13 - col);
+        board3.makeMove(row, col,'o');
+	}
+    // board3.printBoard();
 
-    // correctState = (board3.getGameState() == O_WON);
-    // cout << correctState << " : right diagonal middle win" << endl;
+    correctState = (board3.getGameState() == O_WON);
+    cout << correctState << " : right diagonal middle win" << endl;
 
     
 }
