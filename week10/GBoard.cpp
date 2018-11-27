@@ -18,7 +18,6 @@ GBoard::GBoard()
     state = UNFINISHED;
 	moveCount = 0;
 
-    // REVIEW: try range-based loop or get ride of double for loop
     for(int row = 0; row < 15; row++)
 	{
 		for(int col = 0; col < 15; col++)
@@ -49,12 +48,16 @@ bool GBoard::makeMove(int row, int col, char move)
 
 	// Check if win
 	won = win(row, col, move);
+
+	// REMOVE:
 	// cout << "win: " << won << endl;
 
+	// check if x won
 	if (won && move == 'x')
 	{
 		state = X_WON;
 	}
+	// check if o won
 	else if (won && move == 'o')
 	{
 		state = O_WON;
@@ -75,7 +78,8 @@ bool GBoard::win(int row, int col, char move)
 {
 	int horizontalCount = 0; 
 	int verticalCount = 0;
-	int diagonalCount = 0;
+	int dL_Count = 0;
+	int dR_Count = 0;
 
 	// REMOVE:
 	int count = 0;
@@ -93,9 +97,21 @@ bool GBoard::win(int row, int col, char move)
 		{
 			verticalCount++;
 		}
-		
-		// TODO: check diagonal
-		if (horizontalCount == 5 || verticalCount == 5 || diagonalCount == 5)
+
+		// TODO: check left diagonal
+		if (board[i][i] == move && (board[(i+1)][(i+1)] == move || board[(i-1)][(i-1)] == move)) 
+		{
+			dL_Count++;
+		}
+
+		// TODO: check right diagonal
+		if (board[14-i][i] == move && (board[14-i][(i+1)] == move || board[14-i][(i-1)] == move)) 
+		{
+			dR_Count++;
+		}
+
+		// check if won
+		if (horizontalCount == 5 || verticalCount == 5 || dL_Count == 5 || dR_Count == 5)
 		{
 			return true;
 		}

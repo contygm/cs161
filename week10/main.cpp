@@ -12,11 +12,11 @@ using std::endl;
 
 int main()
 {
-    basicTest();
-    drawTest();
-    horizontalTest();
-    verticalTest();
-    // diagonalTest();
+    // basicTest();
+    // drawTest();
+    // horizontalTest();
+    // verticalTest();
+    diagonalTest();
 
     // TODO: Test case for next move after win
 

@@ -13,7 +13,6 @@ void verticalTest()
 
     bool correctState;
 
-
     for(int row = 9; row < 15; row++)
 	{
         board0.makeMove(row, 3,'o');
