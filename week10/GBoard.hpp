@@ -16,7 +16,7 @@ private:
 	char board[15][15];
 	gameState state;
     int moveCount;
-    bool win(char move);
+    bool win(int row, int col, char move);
     bool draw();
 
 public:

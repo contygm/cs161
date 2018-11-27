@@ -39,6 +39,7 @@ gameState GBoard::getGameState()
 *********************************************************************/
 bool GBoard::makeMove(int row, int col, char move)
 {
+	bool won = false;
 	if(board[row][col] != '-' || state != UNFINISHED)
 		return false;
 	
@@ -47,9 +48,18 @@ bool GBoard::makeMove(int row, int col, char move)
 	moveCount++;
 
 	// Check if win
-	
+	won = win(row, col, move);
+
+	if (won && move == 'x')
+	{
+		state = X_WON;
+	}
+	else if (won && move == 'o')
+	{
+		state = O_WON;
+	}
 	// Check if draw
-	if (moveCount == 225)
+	else if (moveCount == 225)
 	{
 		state = DRAW;
 	}
@@ -60,15 +70,28 @@ bool GBoard::makeMove(int row, int col, char move)
 /********************************************************************* 
 ** Description: TODO: 
 *********************************************************************/
-bool GBoard::win(char move)
+bool GBoard::win(int row, int col, char move)
 {
-	// TODO: check horizontal
-	// TODO: check diagonal
-	if (board[0][0] == move )
+	int horizontalCount = 0; 
+	int verticalCount = 0;
+	int diagonalCount = 0;
+	for (int i = 0; i < 14; i++)
 	{
-
+		if (horizontalCount == 5 || verticalCount == 5 || diagonalCount == 5)
+		{
+			return true;
+		} 
+		// TODO: check horizontal
+		if (board[row][i] == move) 
+		{
+			horizontalCount++;
+		}
+		// TODO: check diagonal
+		// TODO: check vertical
 	}
-	// TODO: check vertical
+	
+	// cout << horizontalCount << endl;
+
 	return false;
 }
 

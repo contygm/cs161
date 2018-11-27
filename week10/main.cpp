@@ -16,11 +16,11 @@ int main()
     char move;
     bool correctState;
 
-    basicTest();
-    drawTest();
+    // basicTest();
+    // drawTest();
     horizontalTest();
-    verticalTest();
-    diagonalTest();
+    // verticalTest();
+    // diagonalTest();
 
     return 0;
 };
