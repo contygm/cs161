@@ -12,14 +12,10 @@ using std::endl;
 
 int main()
 {
-    // GBoard myBoard;
-    char move;
-    bool correctState;
-
     basicTest();
     drawTest();
     horizontalTest();
-    // verticalTest();
+    verticalTest();
     // diagonalTest();
 
     // TODO: Test case for next move after win

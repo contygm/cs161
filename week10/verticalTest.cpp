@@ -29,7 +29,7 @@ void verticalTest()
 	}
     // board1.printBoard();
 
-    correctState = (board1.getGameState() == O_WON);
+    correctState = (board1.getGameState() == X_WON);
     cout << correctState << " : vertical left win" << endl;
 
     for(int row = 5; row < 10; row++)
@@ -38,7 +38,7 @@ void verticalTest()
 	}
     // board2.printBoard();
 
-    correctState = (board2.getGameState() == O_WON);
+    correctState = (board2.getGameState() == X_WON);
     cout << correctState << " : vertical middle win" << endl;
 
 }

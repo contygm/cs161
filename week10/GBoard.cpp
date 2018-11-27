@@ -82,15 +82,19 @@ bool GBoard::win(int row, int col, char move)
 
 	for (int i = 0; i < 15; i++)
 	{
-		// TODO: check horizontal
+		// check horizontal
 		if (board[row][i] == move && (board[row][(i+1)] == move || board[row][(i-1)] == move)) 
 		{
 			horizontalCount++;
 		}
+
+		// check vertical
+		if (board[i][col] == move && (board[(i+1)][col] == move || board[(i-1)][col] == move)) 
+		{
+			verticalCount++;
+		}
 		
 		// TODO: check diagonal
-		// TODO: check vertical
-
 		if (horizontalCount == 5 || verticalCount == 5 || diagonalCount == 5)
 		{
 			return true;
@@ -99,7 +103,7 @@ bool GBoard::win(int row, int col, char move)
 		count++;
 	}
 	
-	// cout << horizontalCount << " : " << row << " : " << count << endl;
+	// cout << verticalCount << " : " << row << " : " << count << endl;
 
 	return false;
 }
