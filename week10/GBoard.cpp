@@ -83,7 +83,7 @@ bool GBoard::win(int row, int col, char move)
 	for (int i = 0; i < 15; i++)
 	{
 		// TODO: check horizontal
-		if (board[row][i] == move) 
+		if (board[row][i] == move && (board[row][(i+1)] == move || board[row][(i-1)] == move)) 
 		{
 			horizontalCount++;
 		}
