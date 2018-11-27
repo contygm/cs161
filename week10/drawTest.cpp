@@ -15,16 +15,19 @@ void drawTest()
 	{
 		for(int col = 0; col < 15; col++)
 		{
-            if (row % 2 == 0 && col % 2 == 0)
+            if (row % 2 == 0 && col % 4 == 0)
             {
                 count++;
                 board.makeMove(row, col,'x');
+                board.makeMove(row, col+1,'x');
             }
 			    
-            else if (row % 2 != 0 && col % 2 != 0)
+            else if (row % 2 != 0 && col % 6 == 0)
             {
                 count++;
                 board.makeMove(row, col,'x');
+                board.makeMove(row, col+1,'x');
+                board.makeMove(row, col+2,'x');
             }
             else 
             {
@@ -33,8 +36,8 @@ void drawTest()
             }
 		}
 	}
-    // board.printBoard();
+    board.printBoard();
 
-    correctState = (board.getGameState() == DRAW);
-    cout << correctState << " : game is DRAW" << endl;
+    // correctState = (board.getGameState() == DRAW) && (count == 225);
+    // cout << correctState << " : game is DRAW" << endl;
 }
