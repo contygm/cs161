@@ -80,12 +80,31 @@ bool GBoard::win(int row, int col, char move)
 	int verticalCount = 0;
 	int dL_Count = 0;
 	int dR_Count = 0;
+	int leftColStart = 0;
+	int rightRowStart = 0;
+	int rightColStart = 0;
+
+	if(col >= row)
+	{
+		rightRowStart = col - row;
+		rightColStart = row + col;
+	} 
+	else 
+	{
+		leftColStart = row - col;
+		rightRowStart = row - col;
+		rightColStart = 14;
+	}
 
 	// REMOVE:
 	int count = 0;
 
 	for (int i = 0; i < 15; i++)
 	{
+		int leftCol = leftColStart + i;
+		// rightRow += i;
+		// rightCol -= i;
+	
 		// check horizontal
 		if (board[row][i] == move && (board[row][(i+1)] == move || board[row][(i-1)] == move)) 
 		{
@@ -98,28 +117,32 @@ bool GBoard::win(int row, int col, char move)
 			verticalCount++;
 		}
 
-		// TODO: check left diagonal
-		if (board[i][i] == move && (board[(i+1)][(i+1)] == move || board[(i-1)][(i-1)] == move)) 
+		// check left diagonal
+		if (board[i][leftCol] == move && (board[i+1][leftCol+1] == move || board[i-1][leftCol-1] == move)) 
 		{
 			dL_Count++;
 		}
 
 		// TODO: check right diagonal
-		if (board[14-i][i] == move && (board[14-i][(i+1)] == move || board[14-i][(i-1)] == move)) 
-		{
-			dR_Count++;
-		}
+		// if (board[rightRow][rightCol] == move && (board[(14-i)][(i+1)] == move || board[(14-i)][(i-1)] == move)) 
+		// {
+		// 	dR_Count++;
+		// }
 
 		// check if won
 		if (horizontalCount == 5 || verticalCount == 5 || dL_Count == 5 || dR_Count == 5)
 		{
 			return true;
 		}
+		
 		// REMOVE:
 		count++;
+		cout << dL_Count << " : " << leftCol << " : " << i << " : " << count << endl;
+
 	}
 	
-	// cout << verticalCount << " : " << row << " : " << count << endl;
+	// cout << dR_Count << " : " << count << endl;
+	// cout << dL_Count << " : " << count << endl;
 
 	return false;
 }
