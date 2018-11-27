@@ -16,11 +16,13 @@ int main()
     char move;
     bool correctState;
 
-    // basicTest();
-    // drawTest();
+    basicTest();
+    drawTest();
     horizontalTest();
     // verticalTest();
     // diagonalTest();
+
+    // TODO: Test case for next move after win
 
     return 0;
 };

@@ -14,7 +14,8 @@ void horizontalTest()
     bool correctState;
 
 
-    for(int col = 9; col < 15; col++)
+    // NOTE: test 1
+    for(int col = 10; col < 15; col++)
 	{
         board0.makeMove(0, col,'o');
 	}
@@ -23,22 +24,24 @@ void horizontalTest()
     correctState = (board0.getGameState() == O_WON);
     cout << correctState << " : horizontal right win" << endl;
 
-    for(int col = 0; col < 5; col++)
+    // NOTE: test 2
+    for(int col = 0; col < 6; col++)
 	{
         board1.makeMove(14, col,'x');
 	}
     // board1.printBoard();
 
-    correctState = (board1.getGameState() == O_WON);
+    correctState = (board1.getGameState() == X_WON);
     cout << correctState << " : horizontal left win" << endl;
 
-    for(int col = 5; col < 10; col++)
+    // NOTE: test 2
+    for(int col = 5; col < 11; col++)
 	{
         board2.makeMove(7, col,'x');
 	}
     // board2.printBoard();
 
-    correctState = (board2.getGameState() == O_WON);
+    correctState = (board2.getGameState() == X_WON);
     cout << correctState << " : horizontal middle win" << endl;
 
 }
