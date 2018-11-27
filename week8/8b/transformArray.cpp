@@ -1,12 +1,11 @@
 /******************************************************************************* 
 ** Author:       Genevieve Conty
 ** Date:         11/14/2018
-** Description:  
-**          
+** Description:  Function accepts a pointer by reference for an array and the size
+**          of the array. Function transforms array into double size with the first
+**          half being the original array values and the last half being 
+**          the original array values plus one. 
 *******************************************************************************/ 
-#include <iostream>
-using std::endl;
-using std::cout;
 
 void transformArray(int* &array, int size)
 {
@@ -21,11 +20,6 @@ void transformArray(int* &array, int size)
 
         // fill last half with original array value plus one
         newArray[size+i] = *(array+i)+1;
-    }
-        
-    for (int i=0; i < (size*2); i++)
-    {
-        cout << "YO: " << newArray[i] << endl;
     }
     
     delete[] array;

@@ -14,5 +14,10 @@
         "iostream": "cpp",
         "istream": "cpp",
         "chrono": "cpp"
+    },
+
+    "workbench.colorCustomizations" : {
+        "terminal.foreground" : "#12d35c",
+        "terminal.background" : "#2f2e2e"
     }
 }

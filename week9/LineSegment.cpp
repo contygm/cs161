@@ -11,8 +11,8 @@
 // constructor
 LineSegment::LineSegment(Point* ep1, Point* ep2)
 {
-    endPnt1 = ep1;
-    endPnt2 = ep2;
+    setEnd1(ep1);
+    setEnd2(ep2);
 }
 
 // setters

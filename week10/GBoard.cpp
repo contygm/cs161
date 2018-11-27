@@ -60,10 +60,14 @@ bool GBoard::makeMove(int row, int col, char move)
 /********************************************************************* 
 ** Description: TODO: 
 *********************************************************************/
-bool GBoard::win()
+bool GBoard::win(char move)
 {
 	// TODO: check horizontal
 	// TODO: check diagonal
+	if (board[0][0] == move )
+	{
+
+	}
 	// TODO: check vertical
 	return false;
 }
