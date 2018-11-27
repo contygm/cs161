@@ -4,6 +4,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+// TODO: add in opposite moves
 void basicTest()
 {
     GBoard myBoard;
@@ -12,7 +13,7 @@ void basicTest()
 
     myBoard.makeMove(0, 0,'x');
     myBoard.makeMove(0, 1, 'o');
-    myBoard.printBoard();
+    // myBoard.printBoard();
 
     correctState = (myBoard.getGameState() == UNFINISHED);
     cout << correctState << " : game is unfinished" << endl;
