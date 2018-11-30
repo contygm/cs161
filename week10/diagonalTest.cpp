@@ -29,7 +29,7 @@ void diagonalTest()
 	}
     // board2.printBoard();
 
-    correctState = (board2.getGameState() == O_WON);
+    correctState = (board2.getGameState() == X_WON);
     cout << correctState << " : left diagonal middle" << endl;
     
     // NOTE: RIGHT

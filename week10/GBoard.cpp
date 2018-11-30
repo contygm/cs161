@@ -141,6 +141,7 @@ bool GBoard::win(int row, int col, char move)
 		// check if won
 		if ( leftD == 5 || rightD == 5) 
 			return true;
+		
 	} 
 	
 	return false;
