@@ -1,8 +1,8 @@
 /******************************************************************************* 
 ** Author:       Genevieve Conty
 ** Date:         11/29/2018
-** Description:  Class declaration for GBoard class.  
-**          	 TODO:
+** Description:  Class declaration for GBoard class.
+**          	 
 *******************************************************************************/ 
 
 #ifndef GBOARD_HPP
@@ -16,8 +16,11 @@ private:
 	char board[15][15];
 	gameState state;
     int moveCount;
+    /********************************************************************* 
+    ** Description: Check if move results in a win. Checks vertically, 
+    ** 				horizontally and diagonally.
+    *********************************************************************/
     bool win(int row, int col, char move);
-    bool draw();
 
 public:
 
