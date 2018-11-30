@@ -14,7 +14,6 @@ void drawTest()
     int even[15] = {'x', 'x', 'x', 'x', 'o', 'o', 'o', 'o','x', 'x', 'x', 'x', 'o', 'o','o'};
     int odd[15] = {'o', 'o', 'o', 'o', 'x', 'x', 'x', 'x', 'o', 'o', 'o', 'o','x', 'x', 'x'};
 
-
     for(int row = 0; row < 15; row++)
 	{
         if (row % 2 == 0){

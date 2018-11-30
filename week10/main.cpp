@@ -5,6 +5,7 @@
 #include "diagonalTest.cpp"
 #include "horizontalTest.cpp"
 #include "verticalTest.cpp"
+#include "advTest.cpp"
 
 using std::cout;
 using std::cin;
@@ -18,6 +19,7 @@ int main()
     horizontalTest();
     verticalTest();
     diagonalTest();
+    // advTest();
 
     // TODO: Test case for next move after win
 

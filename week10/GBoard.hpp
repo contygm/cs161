@@ -31,7 +31,8 @@ public:
 	gameState getGameState();
 
     /********************************************************************* 
-    ** Description: TODO:
+    ** Description: Make moves based on user input. Takes row (int), 
+    **				column(int), and user's move (char) of 'x' or 'o'.
     *********************************************************************/
 	bool makeMove(int row, int col, char player);
 

@@ -4,7 +4,6 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-// TODO: add in opposite moves
 void diagonalTest()
 {
     GBoard board0;
@@ -26,12 +25,12 @@ void diagonalTest()
 
     for(int row = 5; row < 10; row++)
 	{
-        board2.makeMove((row + 3), row,'x');
+        board2.makeMove((row + 3), row, 'x');
 	}
     // board2.printBoard();
 
-    correctState = (board2.getGameState() == X_WON);
-    cout << correctState << " : left diagonal middle win" << endl;
+    correctState = (board2.getGameState() == O_WON);
+    cout << correctState << " : left diagonal middle" << endl;
     
     // NOTE: RIGHT
     for(int col = 14; col > 9; col--)

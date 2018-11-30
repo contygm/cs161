@@ -20,9 +20,10 @@ GBoard::GBoard()
 	moveCount = 0;
 
 	// board with '-' as placeholder
-    for(int i = 0; i < 15; i++)
+    for(int row = 0; row < 15; row++)
 	{
-		board[i][i] = '-';
+		for(int col = 0; col < 15; col++)
+			board[row][col] = '-';
 	}
 }
 
@@ -71,7 +72,7 @@ bool GBoard::makeMove(int row, int col, char move)
 }
 
 /********************************************************************* 
-** Description: check if move results in a win. Checks vertically, 
+** Description: Check if move results in a win. Checks vertically, 
 ** 				horizontally and diagonally.
 *********************************************************************/
 bool GBoard::win(int row, int col, char move)
