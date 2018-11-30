@@ -81,65 +81,60 @@ bool GBoard::win(int row, int col, char move)
 {
 	int horizontalCount = 0; 
 	int verticalCount = 0;
-	int leftColStart = 0;
-	int rightRowStart = 0;
-	int rightColStart = row + col;
-
-	if (row > col)
-	{
-		leftColStart = row - col;
-	}
 
 	// TODO: bounds checking
-	// for (int i = 0; i < 15; i++)
-	// {
-	// 	int leftCol = leftColStart + i;
-	// 	int rightRow = rightRowStart + i;
-	// 	int rightCol = rightColStart - i;
+	for (int i = 0; i < 15; i++)
+	{
 	
-	// 	// check horizontal
-	// 	if (board[row][i] == move && ((board[row][i+1] == move && board[row][i+2] == move) || (board[row][i-2] == move && board[row][i-1] == move))) 
-	// 	{
-	// 		horizontalCount++;
-	// 	}
+		// check horizontal
+		if (board[row][i] == move) 
+		{
+			horizontalCount++;
+		} else {
+			horizontalCount = 0;
+		}
 
-	// 	// check vertical
-	// 	if (board[i][col] == move && (board[(i+1)][col] == move || board[(i-1)][col] == move)) 
-	// 	{
-	// 		verticalCount++;
-	// 	}
+		// check vertical
+		if (board[i][col] == move) 
+		{
+			verticalCount++;
+		} else {
+			verticalCount = 0;
+		}
 
-	// 	// check if won
-	// 	if (horizontalCount == 5 || verticalCount == 5)
-	// 	{
-	// 		return true;
-	// 	}
-	// }
+		// check if won
+		if (horizontalCount == 5 || verticalCount == 5)
+		{
+			return true;
+		}
+	}
 
+	// check diagonals
 	int left = 1;
 	int right = 1;
 
-	for (int i = 1; i < 6; i++)
+	for (int i = 1; i < 5; i++)
 	{
-		// check left up diagonal
+		// check left up
 		if ( row-i < 15 && row-i >= 0 && col-i >= 0 && col-i < 15 && board[row-i][col-i] == move) 
 		{
 			left++;
 		}
 
-		// check left down diagonal
+		// check left down
 		if ( row+i < 15 && row+i >= 0 && col+i >= 0 && col+i < 15 && board[row+i][col+i] == move) 
 		{
 			left++;
 		}
 
-		// check right up diagonal
+		// check right up
 		if ( row-i < 15 && row-i >= 0 && col+i >= 0 && col+i < 15 && board[row-i][col+i] == move) 
 		{
 			right++;
 		}
 
-		// check right down diagonal
+		// check right down
+		// TODO: two sided inequality
 		if ( row+i < 15 && row+i >= 0 && col-i >= 0 && col-i < 15 && board[row+i][col-i] == move) 
 		{
 			right++;
