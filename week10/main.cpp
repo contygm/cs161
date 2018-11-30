@@ -12,11 +12,12 @@ using std::endl;
 
 int main()
 {
-    // basicTest();
+    basicTest();
+    // TODO: false pass check, vert
     drawTest();
-    // horizontalTest();
-    // verticalTest();
-    // diagonalTest();
+    horizontalTest();
+    verticalTest();
+    diagonalTest();
 
     // TODO: Test case for next move after win
 

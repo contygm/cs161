@@ -69,7 +69,7 @@ bool GBoard::makeMove(int row, int col, char move)
 		state = DRAW;
 	}
 
-	cout << "win: " << won << " : " << move << " : " << state << endl;
+	// cout << "win: " << won << " : " << move << " : " << state << endl;
 
 	return true;
 }
@@ -81,8 +81,6 @@ bool GBoard::win(int row, int col, char move)
 {
 	int horizontalCount = 0; 
 	int verticalCount = 0;
-	int dL_Count = 0;
-	int dR_Count = 0;
 	int leftColStart = 0;
 	int rightRowStart = 0;
 	int rightColStart = row + col;
@@ -93,42 +91,65 @@ bool GBoard::win(int row, int col, char move)
 	}
 
 	// TODO: bounds checking
-	for (int i = 0; i < 15; i++)
-	{
-		int leftCol = leftColStart + i;
-		int rightRow = rightRowStart + i;
-		int rightCol = rightColStart - i;
+	// for (int i = 0; i < 15; i++)
+	// {
+	// 	int leftCol = leftColStart + i;
+	// 	int rightRow = rightRowStart + i;
+	// 	int rightCol = rightColStart - i;
 	
-		// check horizontal
-		if (board[row][i] == move && ((board[row][i+1] == move && board[row][i+2] == move) || (board[row][i-2] == move && board[row][i-1] == move))) 
+	// 	// check horizontal
+	// 	if (board[row][i] == move && ((board[row][i+1] == move && board[row][i+2] == move) || (board[row][i-2] == move && board[row][i-1] == move))) 
+	// 	{
+	// 		horizontalCount++;
+	// 	}
+
+	// 	// check vertical
+	// 	if (board[i][col] == move && (board[(i+1)][col] == move || board[(i-1)][col] == move)) 
+	// 	{
+	// 		verticalCount++;
+	// 	}
+
+	// 	// check if won
+	// 	if (horizontalCount == 5 || verticalCount == 5)
+	// 	{
+	// 		return true;
+	// 	}
+	// }
+
+	int left = 1;
+	int right = 1;
+
+	for (int i = 1; i < 6; i++)
+	{
+		// check left up diagonal
+		if ( row-i < 15 && row-i >= 0 && col-i >= 0 && col-i < 15 && board[row-i][col-i] == move) 
 		{
-			horizontalCount++;
+			left++;
 		}
 
-		// check vertical
-		if (board[i][col] == move && (board[(i+1)][col] == move || board[(i-1)][col] == move)) 
+		// check left down diagonal
+		if ( row+i < 15 && row+i >= 0 && col+i >= 0 && col+i < 15 && board[row+i][col+i] == move) 
 		{
-			verticalCount++;
+			left++;
 		}
 
-		// check left diagonal
-		if (board[leftCol][i] == move && (board[leftCol+1][i+1] == move || board[leftCol-1][i-1] == move) && leftCol < 15) 
+		// check right up diagonal
+		if ( row-i < 15 && row-i >= 0 && col+i >= 0 && col+i < 15 && board[row-i][col+i] == move) 
 		{
-			dL_Count++;
+			right++;
 		}
 
-		// check right diagonal
-		if (board[rightRow][rightCol] == move && (board[rightRow+1][rightCol-1] == move || board[rightRow-1][rightCol+1] == move) && (rightRow < 15 && rightCol > -1)) 
+		// check right down diagonal
+		if ( row+i < 15 && row+i >= 0 && col-i >= 0 && col-i < 15 && board[row+i][col-i] == move) 
 		{
-			dR_Count++;
+			right++;
 		}
 
-		// check if won
-		if (horizontalCount == 5 || verticalCount == 5 || dL_Count == 5 || dR_Count == 5)
+		if ( left == 5 || right == 5) 
 		{
 			return true;
 		}
-	}
+	} 
 	
 	return false;
 }

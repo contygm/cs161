@@ -36,8 +36,8 @@ void drawTest()
             }
 		}
 	}
-    board.printBoard();
+    // board.printBoard();
 
-    // correctState = (board.getGameState() == DRAW) && (count == 225);
-    // cout << correctState << " : game is DRAW" << endl;
+    correctState = (board.getGameState() == DRAW) && (count == 225);
+    cout << correctState << " : game is DRAW" << endl;
 }

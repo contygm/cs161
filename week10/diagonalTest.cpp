@@ -53,6 +53,5 @@ void diagonalTest()
 
     correctState = (board3.getGameState() == O_WON);
     cout << correctState << " : right diagonal middle win" << endl;
-
     
 }
